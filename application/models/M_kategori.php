@@ -18,6 +18,27 @@ class M_kategori extends CI_Model {
         $query = $this->db->query("SELECT * FROM categories WHERE id='$id'");
         return $query->row();
     }
+
+    public function edit($id)
+    {
+        $query = $this->db->query("SELECT * FROM categories WHERE id='$id'");
+        return $query->row();
+    }
+
+    public function update($table, $data, $id)
+    {
+        $query = $this->db->where('id', $id);
+        $query = $this->db->update($table, $data);
+        return $query;
+    }
+
+    
+    public function destroy($table, $id)
+    {
+        $query = $this->db->where('id', $id);
+        $query = $this->db->delete($table);
+        return $query;
+    }
 }
 
 //model for database

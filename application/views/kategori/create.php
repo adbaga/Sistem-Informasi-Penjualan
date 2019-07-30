@@ -33,18 +33,26 @@
                                     <label for="name">Category</label>
                                     <input type="text" name="name" class="form-control" placeholder="Enter category" />
                                 </div>
+
+                                <?= form_password('password') ?>
+                                
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select name="status" class="form-control">
                                         <option value="active">Active</option>
                                         <option value="inactive">Inactive</option>
                                     </select>
+
                                 </div>
+
+                                
+                               
                             </div>
                             <div class="card-footer">
                                 <a href="" class="btn btn-outline-info">Back</a>
                                 <button type="submit" class="btn btn-primary pull-right">Add Category</button>
                             </div>
+                            
                         </div>
                     </form>
                 </div>

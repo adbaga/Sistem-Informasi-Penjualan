@@ -33,14 +33,15 @@
                   <td> <?= $row['status'] ?></td>
                   <td>
                   <div class="btn-group">
-                  <a class="btn btn-info" href="<?=base_url('index.php/kategori/show/'.$row['id']) ?>">
-                  <i class="fa fa-eye"></i>
+                    <a class="btn btn-info" href="<?=base_url('index.php/kategori/show/'.$row['id']) ?>">
+                    <i class="fa fa-eye"></i></a>
 
-                  <a class="btn btn-success" href="#">
-                  <i class="fa fa-pencil"></i>
-
-                  <a class="btn btn-danger" href="#">
-                  <i class="fa fa-trash"></i>
+                  
+                  <a class="btn btn-success" href="<?=base_url('index.php/kategori/edit/'.$row['id']) ?>">
+                  <i class="fa fa-pencil"></i></a>
+                
+                  <a class="btn btn-danger" href="<?=base_url('index.php/kategori/destroy/'.$row['id']) ?>">
+                  <i class="fa fa-trash"></i></a>
                   
                   </td>
 
