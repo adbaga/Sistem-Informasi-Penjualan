@@ -27,13 +27,45 @@
                    
                         <div class="card">
                             <div class="card-header">
+
+                            <!-- validasi input starts -->
+                            <?php
+                            $inputs = $this->session->flashdata('input');
+                            ?>
+                            <!-- end validasi input -->
+                                <!-- Validation starts -->
+                                <?php
+                                $error = $this->session->flashdata('error');
+
+                                if(!empty($error)) { ?>
+                                <div class="alert alert-warning">
+
+                                <?php foreach($error as $key => $error) { ?>
+                                <li> <?= $error ?> </li>
+                                <?php } ?>
+
+                                </div>
+
+                                <?php
+                                } ?>
+
+                                <!-- Flash data  -->
+                                <?php if($this->session->flashdata('msg')=='success_add'){
+                                    
+                                    echo ' <div class="alert alert-success"> <a class="close" data-dismiss="alert" href="#">&times;</a>
+                                    <strong>Sukses!</strong>Berhasil menambah data.</div>';
+                                }
+
+                                ?>
+                                 
+                                
                                 <h3 class="card-title">Add Category</h3>
                             </div>
                             <div class="card-body">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Category</label>
-                                        <select name="name" class="form-control">
+                                        <select name="category" class="form-control">
                                             <option value="">No selected</option>
 
                                             <?php foreach ($kategori->result() as $row) {?>
@@ -48,7 +80,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Name">SKU</label>
+                                        <label for="Name">Name</label>
                                         <?= form_input(array('name'=>'name', 'class'=>'form-control',
                                         'placeholder'=>'Enter Name')) ?>
                                     </div> 
@@ -58,8 +90,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="sku">SKU</label>
-                                        <?= form_input(array('name'=>'sku', 'class'=>'form-control',
-                                        'placeholder'=>'Enter SKU')) ?>
+                                        <?= form_input('sku', $inputs['sku'], ['class'=>'form-control',
+                                        'placeholder'=>'Enter SKU']) ?>
                                     </div> 
                                 </div>
 

@@ -31,11 +31,11 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">Category</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Enter category" />
+                                    <input type="text" name="category" class="form-control" placeholder="Enter category" />
                                 </div>
 
                                 <?= form_password('password') ?>
-                                
+
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select name="status" class="form-control">
